@@ -55,7 +55,7 @@ public abstract class Animal {
 
     /**
     * Defines the actions an animal performs in a simulation step.
-    * The animal ages, experiences hunger, attempt to reproduce, and searches for food.
+    * The animal ages, experiences hunger, attempts to reproduce, and searches for food.
     * It may also contract or suffer from disease. If conditions become fatal, it dies.
     *
     * @param newAnimals: A list to store newly created animals (offspring).
@@ -134,7 +134,7 @@ public abstract class Animal {
     * @param newAnimals: A list to store newly created baby animals.
     */
     protected void giveBirth(List<Animal> newAnimals) {
-        // Get a possible partner i.e. same animal and opposite sex.
+        // Get a possible partner, i.e. same animal and opposite sex.
         Animal successfulMate = findMatingPartner();
         if(successfulMate != null) {
             // Gets the shared gene for the children.
@@ -239,9 +239,9 @@ public abstract class Animal {
      * @return A matching animal partner if available, otherwise null.
      */
     protected Animal findMatingPartner() {
-        // Finds all living animal around this animal
+        // Finds all living animals around this animal
         List<Animal> nextByAnimals = field.getLivingNeighbours(getLocation());
-        // Filters this list by if they're the same animal and different sex.
+        // Filters this list by if they're the same animal and a different sex.
         List<Animal> possibleMates = nextByAnimals.stream().filter(
                 (animal) -> animal.getClass() == this.getClass() && animal.getGender() != this.getGender()
         ).toList();
@@ -320,7 +320,7 @@ public abstract class Animal {
     }
 
     /**
-    * Decreases the animal's food level by its metabolic rate.
+    * Decreases the animal's food level due to its metabolic rate.
     * If the food level drops to zero, the animal dies.
     */
     protected void incrementHunger() {
@@ -376,7 +376,7 @@ public abstract class Animal {
     * @return true if there are infected animals nearby, false otherwise.
     */
     private boolean isInfectedAnimals() {
-         // Finds all living animal around this animal
+         // Finds all living animals around this animal
         List<Animal> nextByAnimals = field.getLivingNeighbours(getLocation());
         // Filters this list by if they're the same animal and infected.
         List<Animal> infectedAnimal = nextByAnimals.stream().filter(
