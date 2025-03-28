@@ -83,7 +83,7 @@ public class PlantTests {
         List<Animal> newAnimals = new ArrayList<>();
         femaleDeer.giveBirth(newAnimals);
 
-        // Ensure a newborn was actually created
+        // Ensure a newborn was created
         int correctNumber = 0;
         System.out.println("Newborns created: " + newAnimals.size());
         assertFalse(newAnimals.isEmpty(), "A newborn should have been created");
@@ -91,7 +91,7 @@ public class PlantTests {
         if (field.getPlantAt(0,2) == null) {
             System.out.println("Deer ate plant at (0, 2)");
             assertNotNull(field.getAnimalAt(0,2), "There is now a deer in (0,2) (this is the newborn)");
-            assertNull(field.getPlantAt(0,2), "There is no longer a plant at (0,2) as it was replaced by newborn");
+            assertNull(field.getPlantAt(0,2), "There is no longer a plant at (0,2) as a newborn replaced it");
             assertNotNull(field.getAnimalAt(0, 0), "Initially there is still a Deer in (0,0) (this is the male deer)");
             assertNotNull(field.getAnimalAt(0, 1), "Initially there is still a Deer in (0,1) (this is the female deer)");
             correctNumber++;
@@ -99,7 +99,7 @@ public class PlantTests {
         if (field.getPlantAt(1,2) == null) {
             System.out.println("Deer ate plant at (1, 2)");
             assertNotNull(field.getAnimalAt(1,2), "There is now a deer in (1,2) (this is the newborn)");
-            assertNull(field.getPlantAt(1,2), "There is no longer a plant at (1,2) as it was replaced by newborn");
+            assertNull(field.getPlantAt(1,2), "There is no longer a plant at (1,2) as a newborn replaced it");
             assertNotNull(field.getAnimalAt(0, 0), "Initially there is still a Deer in (0,0) (this is the male deer)");
             assertNotNull(field.getAnimalAt(0, 1), "Initially there is still a Deer in (0,1) (this is the female deer)");
             correctNumber++;
@@ -107,7 +107,7 @@ public class PlantTests {
         if(field.getPlantAt(1,1) == null) {
             System.out.println("Deer ate plant at (1, 1)");
             assertNotNull(field.getAnimalAt(1,1), "There is now a deer in (1,1) (this is the newborn)");
-            assertNull(field.getPlantAt(1,1), "There is no longer a plant at (1,1) as it was replaced by newborn");
+            assertNull(field.getPlantAt(1,1), "There is no longer a plant at (1,1) as a newborn replaced it");
             assertNotNull(field.getAnimalAt(0, 0), "Initially there is still a Deer in (0,0) (this is the male deer)");
             assertNotNull(field.getAnimalAt(0, 1), "Initially there is still a Deer in (0,1) (this is the female deer)");
             correctNumber++;
@@ -115,7 +115,7 @@ public class PlantTests {
         if(field.getPlantAt(1,0) == null) {
             System.out.println("Deer ate plant at (1, 0)");
             assertNotNull(field.getAnimalAt(1,0), "There is now a deer in (1,0) (this is the newborn)");
-            assertNull(field.getPlantAt(1,0), "There is no longer a plant at (1,0) as it was replaced by newborn");
+            assertNull(field.getPlantAt(1,0), "There is no longer a plant at (1,0) as a newborn replaced it");
             assertNotNull(field.getAnimalAt(0, 0), "Initially there is still a Deer in (0,0) (this is the male deer)");
             assertNotNull(field.getAnimalAt(0, 1), "Initially there is still a Deer in (0,1) (this is the female deer)");
             correctNumber++;
@@ -124,9 +124,9 @@ public class PlantTests {
     }
 
     /**
-    * Tests whether animals that die due to starvation are replaced by plants.
+    * Tests whether plants replace animals that die due to starvation.
     * Ensures that when an animal's food level reaches zero, it is removed from
-    * the field and a plant appears in its place.
+    * the field and a plant appears.
     */
     @Test
     public void testAnimalDeathByStarvationReplacedByPlants() {
@@ -147,9 +147,9 @@ public class PlantTests {
     }
 
     /**
-    * Tests whether animals that die due to old age are replaced by plants.
+    * Tests whether plants replace animals that die due to old age.
     * Ensures that when an animal exceeds its maximum age, it is removed from
-    * the field and a plant appears in its place.
+    * the field and a plant appears.
     */
     @Test
     public void testAnimalDeathByOldAgeReplacedByPlants() {
@@ -171,7 +171,7 @@ public class PlantTests {
     }
 
     /**
-    * Tests whether animals dying due to overcrowding are being replaced by plants.
+    * Tests whether plants are replacing animals dying due to overcrowding.
     * Ensures that when an animal dies due to a lack of available space,
     * a plant appears in its place.
     */
@@ -197,7 +197,7 @@ public class PlantTests {
                 new Hare(true, field, new Location(2, 2), Color.BROWN, "13043500323040")
         };
 
-        for (Hare hare : hares) {
+        for (Hare hare: hares) {
             hare.setDisease(false);
             field.placeAnimal(hare, hare.getLocation());
         }
@@ -217,8 +217,8 @@ public class PlantTests {
     }
 
     /**
-    * Tests whether animals dying due to disease are being replaced by plants.
-    * Ensures that when an animal dies from disease, a plant appears in its place.
+    * Tests whether plants are replacing animals dying due to disease.
+    * Ensures that a plant appears in its place when an animal dies from disease.
     */
     @Test
     public void testAnimalDeathByDiseaseReplacedByPlants() {
@@ -241,8 +241,8 @@ public class PlantTests {
     }
 
     /**
-    * Tests whether animals dying due to predation are NOT replaced by plants.
-    * Ensures that when an animal is eaten by a predator, no plant appears in its place.
+    * Tests whether plants do NOT replace animals dying due to predation.
+    * Ensures that no plant appears in its place when a predator eats an animal.
     */
     @Test
     public void testAnimalDeathByEatenNotReplacedByPlants() {
@@ -272,7 +272,7 @@ public class PlantTests {
 
     /**
     * Tests whether plants eaten by herbivores are removed from the field.
-    * Ensures that when a herbivore eats a plant, it is no longer present.
+    * Ensures that it is no longer present when a herbivore eats a plant.
     */
     @Test
     public void testPlantRemovedWhenEaten() {
@@ -289,7 +289,7 @@ public class PlantTests {
         field.placeAnimal(maleDeer, maleDeer.getLocation());
         field.placePlant(plant, plant.getLocation());
 
-        // Verify initial conditions that Deer at (0,0), plant at (0,1)
+        // Verify initial conditions that the Deer at (0,0), the plant at (0,1)
         assertTrue((maleDeer.getLocation().getRow() == 0) && (maleDeer.getLocation().getCol() == 0), "Initially there is a deer at (0,0)");
         assertNotNull(field.getPlantAt(0,1), "Initially there is a plant at (0,1)");
 
