@@ -53,7 +53,7 @@ public class Genetics {
 
     /**
     * Sets the animal's genetic attributes by parsing the gene string.
-    * The gene string is divided into its components and assigned to corresponding attributes.
+    * The gene string is divided into components and assigned to corresponding attributes.
     */
     private void setGenes() {
         setBreedingAge(Integer.parseInt(gene.substring(0,2)));
@@ -91,7 +91,7 @@ public class Genetics {
     * @param attribute: The attribute to check (e.g., breeding age, max age).
     * @param changeBy: The value by which the characteristic is mutated (+1 or -1).
     * @param characteristicValue: The current value of the characteristic.
-    * @return true if the mutation is valid, otherwise false.
+    * @return true if the mutation is valid; otherwise, it is false.
     */
     public boolean isValid(ATTRIBUTE attribute, int changeBy, int characteristicValue) {
         return switch (attribute) {
@@ -133,7 +133,7 @@ public class Genetics {
     *
     * @param changeBy: The amount to change the characteristic (+1 or -1).
     * @param characteristicValue: The current value of the characteristic.
-    * @return true if the breeding probability is valid, otherwise false.
+    * @return true if the breeding probability is valid; otherwise, it is false.
     */
     private boolean isValidBreedingProbability(int changeBy, int characteristicValue) {
         characteristicValue += changeBy;
@@ -145,7 +145,7 @@ public class Genetics {
     *
     * @param changeBy: The amount to change the characteristic (+1 or -1).
     * @param characteristicValue: The current value of the characteristic.
-    * @return true if the max litter size is valid, otherwise false.
+    * @return true if the max litter size is valid; otherwise, it is false.
     */
     private boolean isValidMaxLitterSize(int changeBy, int characteristicValue) {
         characteristicValue += changeBy;
@@ -157,7 +157,7 @@ public class Genetics {
     *
     * @param changeBy: The amount to change the characteristic (+1 or -1).
     * @param characteristicValue: The current value of the characteristic.
-    * @return true if the disease probability is valid, otherwise false.
+    * @return true if the disease probability is valid; otherwise, it is false.
     */
     private boolean isValidDiseaseProbability(int changeBy, int characteristicValue) {
         characteristicValue += changeBy;
@@ -169,7 +169,7 @@ public class Genetics {
     *
     * @param changeBy: The amount to change the characteristic (+1 or -1).
     * @param characteristicValue: The current value of the characteristic.
-    * @return true if the metabolism is valid, otherwise false.
+    * @return true if the metabolism is valid; otherwise, it is false.
     */
     private boolean isValidMetabolism(int changeBy, int characteristicValue) {
         characteristicValue += changeBy;
@@ -202,7 +202,7 @@ public class Genetics {
 
     /**
     * Introduces mutations to the parent's gene and returns the new mutated gene.
-    * Each attribute has a certain probability of mutation, and if valid, the mutation is applied.
+    * Each attribute has a certain probability of mutation; if valid, the mutation is applied.
     *
     * @param parentsGene: The gene of the parent.
     * @return The new mutated gene.
@@ -211,21 +211,21 @@ public class Genetics {
         StringBuilder newGene = new StringBuilder();
         for(ATTRIBUTE attribute : ATTRIBUTE.values()) {
             String characteristicGene = getGeneSegment(attribute, parentsGene);
-            // There's no mutation therefore just add original characteristic gene.
+            // There's no mutation, therefore add the original characteristic gene.
             if(rand.nextDouble() >= MUTATION_PROBABILITY) {
                 newGene.append(characteristicGene);
                 continue;
             }
             int characteristicValue = Integer.parseInt(characteristicGene);
-            int changeBy = rand.nextBoolean() ? -1 : 1;
-            // If the mutation is valid therefore add it to new genetic material.
+            int changeBy = rand.nextBoolean() ? -1: 1;
+            // If the mutation is valid, add it to the new genetic material.
             if(isValid(attribute, changeBy, characteristicValue)) {
                 characteristicValue += changeBy;
                 String newCharacteristicGene = formatCharacterValue(characteristicValue, characteristicGene.length());
                 newGene.append(newCharacteristicGene);
             }
             else {
-                //If mutation isn't valid there add original characteristic gene.
+                //If a mutation isn't invalid, add the original characteristic gene.
                 newGene.append(characteristicGene);
             }
 
