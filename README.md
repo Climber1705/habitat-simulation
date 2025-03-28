@@ -47,16 +47,51 @@ After running the command, the JavaFX window should launch, displaying the habit
 
 ## Repository Structure
 ```
-/habitat-simulation
-│-- src/main/java/       # Java source code
-│   │-- model/           # Simulation logic and animal behavior
-│   │-- view/            # JavaFX UI components
-│   │-- controller/      # Application control logic
-│-- src/main/resources/  # FXML and CSS files
-│-- src/test/java/       # Unit tests
-│-- pom.xml              # Maven configuration file
-│-- build.gradle         # Gradle configuration file
-│-- README.md            # Project documentation
+habitat-simulation/                   # Root directory of the project
+├── src/                              # Source code directory
+│   ├── main/                         # Main application source files
+│   │   ├── java/                     # Java source code
+│   │   │   ├── com/          # Main application package
+│   │   │   │   └── tomtrotter/habitatsimulation/
+│   │   │   │       ├── controller/
+│   │   │   │       │    └── Simulator.java
+│   │   │   │       ├── model/
+│   │   │   │       │    ├── Animal.java
+│   │   │   │       │    ├── Counter.java
+│   │   │   │       │    ├── Deer.java
+│   │   │   │       │    ├── Field.java
+│   │   │   │       │    ├── FieldStats.java
+│   │   │   │       │    ├── Genetics.java
+│   │   │   │       │    ├── Hare.java
+│   │   │   │       │    ├── Leopard.java
+│   │   │   │       │    ├── Location.java
+│   │   │   │       │    ├── Plant.java
+│   │   │   │       │    ├── Predator.java
+│   │   │   │       │    ├── Prey.java
+│   │   │   │       │    ├── Randomizer.java
+│   │   │   │       │    ├── Tiger.java
+│   │   │   │       │    └── WildBoar.java
+│   │   │   │       ├── view/
+│   │   │   │       │    ├── FieldCanvas.java
+│   │   │   │       │    └── SimulatorView.java
+│   │   │   │       └── Main.java
+│   │   │   └── module-info.java  # Initializes and launches the application
+│   └── test/java/com/tomtrotter/habitatsimulation/
+│         ├── controller/
+│         │    └── SimulatorTests.java
+│         ├── model/
+│         │    ├── BreedingTests.java
+│         │    ├── DiseaseTests.java
+│         │    ├── FoodTests.java
+│         │    ├── GeneticTests.java
+│         │    └── PlantTests.java
+│         └── view/
+│              └── FieldCanvasTests.java
+├── pom.xml                           # Maven configuration file managing project dependencies and build settings
+├── build.gradle                      # Gradle configuration file (if Gradle is used instead of Maven)
+├── README.md                         # Project documentation providing an overview, features, installation instructions, usage guidelines, and other relevant information
+└── LICENSE                           # License information specifying the terms under which the project's code can be used and distributed
+
 ```
 
 ## Testing
