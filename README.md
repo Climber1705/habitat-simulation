@@ -106,9 +106,9 @@ JUnit tests cover animal behavior logic, hunting mechanisms, plant consumption, 
 ## Improvements
 Future improvements and features include:
 - Add a section to show the number of each infected species.
-- Additional species-specific traits (e.g., movement patterns).
+- Additional species-specific traits (e.g., movement patterns, field of view).
 - Seasonal changes affecting food availability and survival rates.
 
 ## License
-This project is licensed under the [License Name] - see the [LICENSE](LICENSE) file for details.
+This project operates under the GNU General Public License v3.0. The [LICENSE](https://choosealicense.com/licenses/gpl-3.0/) file provides details.
 
