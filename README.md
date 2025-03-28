@@ -1,9 +1,9 @@
-# Habitat Simulation
+# **Habitat Simulation**
 
-## Overview
+## **Overview**
 This repository is a **JavaFX application** initially developed as coursework at **King’s College London**. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with **complex food chain interactions**, including multiple species with distinct behaviors, **predator-prey relationships, genetic evolution** and **environmental influences like disease**.
 
-## Features
+## **Features**
 - 🦊 **Simulates predator-prey interactions** with distinct hunting behaviors.
 - 🌿 **Implements plant consumption mechanics** for herbivores.
 - 🦠 **Includes disease spread** among species.
@@ -11,14 +11,14 @@ This repository is a **JavaFX application** initially developed as coursework at
 - ⏳ **Age-based predator behavior**.
 - 🛠️ **Extensible object-oriented design** with reusable logic.
 
-## Installation
+## **Installation**
 To install this project, follow these steps:
 1. **Clone the repository:**
-   ```sh
+   ```bash
    git clone https://github.com/Climber1705/habitat-simulation.git
    ```
 2. **Navigate to the project directory:**
-   ```sh
+   ```bash
    cd habitat-simulation
    ```
 3. **Ensure you have Java and JavaFX installed:**
@@ -26,26 +26,26 @@ To install this project, follow these steps:
    - **Install JavaFX SDK:** [Download here](https://gluonhq.com/products/javafx/)
 4. **Configure JavaFX** in your IDE (e.g., IntelliJ IDEA or Eclipse).
 5. **Build the project using Maven or Gradle:**
-   ```sh
+   ```bash
    mvn clean install
    ```
    or
-   ```sh
+   ```bash
    gradle build
    ```
 
-## Usage
+## **Usage**
 To run the JavaFX application, use:
-```sh
+```bash
 mvn javafx:run
 ```
 or
-```sh
+```bash
 java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar target/your-app.jar
 ```
 After running the command, the **JavaFX window should launch, displaying the habitat simulation.**
 
-## Repository Structure
+## **Repository Structure**
 ``` graphql
 habitat-simulation/                   # Root directory of the project
 ├── src/                              # Source code directory
@@ -92,7 +92,7 @@ habitat-simulation/                   # Root directory of the project
 └── LICENSE                           # License information specifying the terms under which the project's code can be used and distributed
 ```
 
-## Testing
+## **Testing**
 Run the test suite using the following command:
 ```sh
 mvn test
@@ -101,7 +101,7 @@ or
 ```sh
 gradle test
 ```
-JUnit tests cover:
+**JUnit tests cover:**
 - ✔️ Animal behavior logic
 - ✔️ Hunting mechanisms
 - ✔️ Plant consumption
@@ -109,13 +109,13 @@ JUnit tests cover:
 - ✔️ Disease spread
 - ✔️ Genetic inheritance
 
-## Improvements
+## **Improvements**
 Future improvements and features include:
 - 📊 **Add a section** to show the number of each infected species.
 - 📈 **See the average** characteristic** of each species.
 - 🦌 **Additional species-specific traits** (e.g., movement patterns, field of view).
 - 🌦️ **Seasonal changes affecting food availability and survival rates.**
 
-## License
+## **License**
 This project operates under the **GNU General Public License v3.0**. The **[LICENSE](https://choosealicense.com/licenses/gpl-3.0/)** file provides details.
 
