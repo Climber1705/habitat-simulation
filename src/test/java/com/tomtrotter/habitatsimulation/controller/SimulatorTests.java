@@ -27,7 +27,7 @@ class SimulatorTests {
     }
 
     /**
-    * Tests whether the Simulator initializes correctly.
+    * Tests whether the simulator initializes correctly.
     * Verifies that the field is created and the initial step count is zero.
     */
     @Test
@@ -54,7 +54,7 @@ class SimulatorTests {
     void testSimulateOneStepIncrementsStep() {
         int initialStep = simulator.getStep();
         simulator.simulateOneStep();
-        assertEquals(initialStep + 1, simulator.getStep(), "Step count should increase by 1 after simulation step.");
+        assertEquals(initialStep + 1, simulator.getStep(), "Step count should increase by one after simulation step.");
     }
 
     /**
@@ -73,7 +73,7 @@ class SimulatorTests {
 
     /**
     * Tests whether the reset method correctly resets the simulation.
-    * Ensures that step count is reset to 0 and the field is repopulated.
+    * Ensures that the step count is reset to 0 and the field is repopulated.
     */
     @Test
     void testResetResetsSimulation() {
