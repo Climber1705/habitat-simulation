@@ -2,7 +2,7 @@ package com.tomtrotter.habitatsimulation.model;
 
 /**
 * Represents a location in a rectangular grid.
-* This class stores the row and column position of a location in a grid, providing basic operations for comparison, string representation, and hash code calculation.
+* This class stores a location's row and column position in a grid, providing basic operations for comparison, string representation, and hash code calculation.
 */
 
 public class Location {
