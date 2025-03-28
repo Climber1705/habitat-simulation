@@ -48,7 +48,7 @@ public class Simulator {
 
     /**
     * Run the simulation from its current state for a single step.
-    * Iterate over the whole field updating the state of each
+    * Iterate over the whole field, updating the state of each
     * animal.
     */
     public void simulateOneStep() {
@@ -85,14 +85,14 @@ public class Simulator {
                     int randint = rand.nextInt(NUMBER_OF_PREDATOR_TYPES);  //generate random number between 0-1
                     switch (randint) {
                         // Adds a tiger
-                        case 0 : {
+                        case 0: {
                                     Location location = new Location(row, col);
                                     Tiger tiger = new Tiger(true, field, location, tigerColour,  "");
                                     animals.add(tiger);
                                     break;
                         }
                         // Adds a leopard
-                        case 1 : {
+                        case 1: {
                                     Location location = new Location(row, col);
                                     Leopard leopard = new Leopard(true, field, location, leopardColour,"");
                                     animals.add(leopard);
@@ -105,21 +105,21 @@ public class Simulator {
                     int randint = rand.nextInt(NUMBER_OF_PREY_TYPES);
                     switch (randint) {
                         // Adds a Hare
-                        case 0 : {
+                        case 0: {
                                     Location location = new Location(row, col);
                                     Hare hare = new Hare(true, field, location, hareColour,"");
                                     animals.add(hare);
                                     break;
                         }
                         // Adds a deer
-                        case 1 : {
+                        case 1: {
                                     Location location = new Location(row, col);
                                     Deer deer = new Deer(true, field, location, deerColour,"");
                                     animals.add(deer);
                                     break;
                         }
                         // Adds a wild boar
-                        case 2 : {
+                        case 2: {
                                     Location location = new Location(row, col);
                                     WildBoar wildBoar = new WildBoar(true, field, location, wildBoarColour,"");
                                     animals.add(wildBoar);
@@ -170,7 +170,7 @@ public class Simulator {
     }
 
     /**
-    * Returns list of animals.
+    * Returns a list of animals.
     * @return the list of animals.
     */
     public List<Animal> getAnimals() {
