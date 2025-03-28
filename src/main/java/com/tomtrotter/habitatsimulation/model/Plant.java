@@ -38,7 +38,7 @@ public class Plant
 
     /**
     * Place the plant at a new location within the given field.
-    * The plant is moved from its current location to a new one, and the field is updated accordingly.
+    * The plant has been moved from its current location to a new one, and the field has been updated accordingly.
     *
     * @param newLocation: The new location to place the plant.
     */
