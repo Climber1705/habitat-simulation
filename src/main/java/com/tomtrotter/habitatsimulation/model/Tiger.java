@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 
 /**
 * A simple model of a Tiger. A Tiger can age, move, eat prey (such as Deer, Wild Boar, Rabbit),
-* and die. It also implements the Predator interface, meaning it hunts for food in the simulation.
+* and die. It also implements the Predator interface, which hunts for food in the simulation.
 */
 
 public class Tiger extends Animal implements Predator {
@@ -15,18 +15,17 @@ public class Tiger extends Animal implements Predator {
 
     /**
     * Creates a Tiger. A tiger can be created as a newborn (age zero and not hungry)
-    * or with a random age and food level based on whether it is from the initial generation.
+    * or with a random age and food level based on whether it is from the initial generator
     *
-    * @param isGen1: Determines whether the tiger is from the initial generation. If true, the tiger
-    *               will have a random age, hunger level, and gene.
+    * @param isGen1: Determines whether the tiger is from the initial generation. If true, the tiger will have a random age, hunger level, and gene.
     * @param field: The field currently occupied by the tiger.
-    * @param location: The location of the tiger within the field.
+    * @param location: The location of the tiger within tigerfield.
     * @param colour: The color that the tiger is represented by.
     * @param gene: The tiger's genetic code.
     */
     public Tiger(boolean isGen1, Field field, Location location, Color colour, String gene) {
         super(field, location, colour, gene);
-        //If initializing the simulation, set random ages and food levels for animals.
+        // If initializing the simulation, set random ages and animal food levels.
         if(isGen1) {
             setAge(rand.nextInt(genetics.getMaxAge()));
             setFoodLevel(rand.nextInt(PREY_FOOD_VALUE));
@@ -35,18 +34,18 @@ public class Tiger extends Animal implements Predator {
         else {
             setAge(0);
             setFoodLevel(PREY_FOOD_VALUE);
-            setDisease(false);
+            settigerse(false);
         }
     }
 
     /**
      * Determines where the tiger should move to find food.
      * Delegates the findFood() method to call the hunt() method,
-     * which allows the tiger to hunt prey like Deer, Wild Boar, or Hare
-     * in the field based on the tiger's age.
+     * which allows the tiger to hunt prey like Deer, tigers, or hares
+     * in the tiger based on the tiger's age.
      * <p>
      * If the tiger is young, it hunts smaller prey (Hare, Deer).
-     * Older tigers may hunt larger prey (Deer, Wild Boar, Hare).
+     * Older tigers may hunt larger prey (Deer, Wild tiger Hare).
      *
      * @return The location where the tiger finds food.
      */
@@ -61,7 +60,7 @@ public class Tiger extends Animal implements Predator {
 
     /**
     * Creates a new baby tiger with default attributes.
-    * This method is called when a tiger successfully breeds.
+    * This method is called when a tiger successfully breeds
     *
     * @param field: The field where the new tiger will be placed.
     * @param location: The location of the newborn tiger within the field.
