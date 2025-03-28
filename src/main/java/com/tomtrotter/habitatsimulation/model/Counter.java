@@ -2,8 +2,8 @@ package com.tomtrotter.habitatsimulation.model;
 
 /**
 * The Counter class tracks the number of participants of a specific type in the simulation.
-* Each counter is associated with a unique name, an identifying icon, and a count of occurrences.
-* It provides methods to retrieve the name, count, and icon, as well as to increment or reset the count.
+* Each counter has a unique name, an identifying icon, and a count of occurrences.
+* It provides methods to retrieve the name, count, and icon and increment or reset the count.
 */
 
 public class Counter {
