@@ -248,7 +248,7 @@ public class FoodTests {
         Plant plant = new Plant(field, new Location(0,0));
         field.placePlant(plant, plant.getLocation());
 
-        // Verify initial positions and that hare is alive.
+        // Verify initial positions and that the hare is alive.
         assertTrue(hare.isAlive(), "Hare is dead");
         assertNotNull(field.getPlantAt(0,0), "There isn't a plant present at (0,0)");
 
@@ -275,7 +275,7 @@ public class FoodTests {
         assertFalse(hare.isAlive(), "Hare is alive");
         assertNull(field.getPlantAt(0,0), "There is a plant present at (0,0)");
 
-        // Move wild boar back and add another hare and plant for grazing.
+        // Move the wild boar back and add another hare and plant for grazing.
         wildBoar.setLocation(start);
         field.placeAnimal(wildBoar, wildBoar.getLocation());
         Hare newHare = new Hare(true, field, new Location(0,2), Color.BROWN, "13043500323040");
@@ -288,7 +288,7 @@ public class FoodTests {
 
         // Verify the wild boar grazes the plant.
         assertTrue(newHare.isAlive(), "New hare is dead");
-        assertNull(field.getPlantAt(0,0), "Theres is a plant present at (0,0)");
+        assertNull(field.getPlantAt(0,0), "There is a plant present at (0,0)");
     }
 
 }
