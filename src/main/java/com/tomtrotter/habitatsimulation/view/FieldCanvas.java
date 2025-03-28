@@ -22,7 +22,7 @@ public class FieldCanvas extends Canvas {
     *
     * @param canvasWidth: The width of the canvas in pixels.
     * @param canvasHeight: The height of the canvas in pixels.
-    * @param gridWidth: The number of cells in the width of the grid.
+    * @param gridWidth: The number of cells in the grid's width.
     * @param gridHeight: The number of cells in the height of the grid.
     */
     public FieldCanvas(double canvasWidth, double canvasHeight, int gridWidth, int gridHeight) {
