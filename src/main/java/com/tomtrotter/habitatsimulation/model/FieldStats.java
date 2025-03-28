@@ -100,8 +100,8 @@ public class FieldStats {
 
     /**
     * Determines if the simulation should continue running.
-    * The simulation is considered viable if there's more than one species has a nonzero count.
-    * The simulation with stop all the animals have died.
+    * The simulation is considered viable if more than one species has a nonzero count.
+    * The simulation stops all the animals from dying.
     *
     * @param field: The field to check for population viability.
     * @return true if there is more than one species alive, false otherwise.
@@ -127,7 +127,7 @@ public class FieldStats {
     * Generates and updates the counts of animals and plants in the field.
     * This method scans the field and increments counters accordingly.
     *
-    * @param field: The field to generate the statistics for.
+    * @param field: The field for which the statistics are generated.
     */
     private void generateCounts(Field field) {
         reset();
