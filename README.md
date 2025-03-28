@@ -1,15 +1,15 @@
 # Habitat Simulation
 
 ## Overview
-This repository is a JavaFX application that simulates a habitat environment with complex food chain interactions. The simulation includes multiple species with distinct behaviors, implementing predator-prey relationships, genetic evolution, and environmental influences like disease. The project provides a realistic and engaging representation of ecosystem dynamics.
+This repository is a JavaFX application initially developed as coursework at King’s College London. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with complex food chain interactions, including multiple species with distinct behaviors, predator-prey relationships & genetic evolution and environmental influences like disease.
 
 ## Features
-- Simulates predator-prey interactions with distinct hunting behaviors.
-- Implements plant consumption mechanics for herbivores.
-- Includes disease spread among species.
-- Genetic inheritance and mutations affecting evolution.
-- Age-based predator behavior.
-- Extensible object-oriented design with reusable logic.
+- 🦊 Simulates predator-prey interactions with distinct hunting behaviors.
+- 🌿 Implements plant consumption mechanics for herbivores.
+- 🦠 Includes disease spread among species.
+- 🧬 Genetic inheritance and mutations affecting evolution.
+- ⏳ Age-based predator behavior.
+- 🛠️ Extensible object-oriented design with reusable logic.
 
 ## Installation
 To install this project, follow these steps:
@@ -106,6 +106,7 @@ JUnit tests cover animal behavior logic, hunting mechanisms, plant consumption, 
 ## Improvements
 Future improvements and features include:
 - Add a section to show the number of each infected species.
+- See the average characteristic of each species.
 - Additional species-specific traits (e.g., movement patterns, field of view).
 - Seasonal changes affecting food availability and survival rates.
 
