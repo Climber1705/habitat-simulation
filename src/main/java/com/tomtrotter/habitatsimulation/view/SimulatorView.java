@@ -233,7 +233,7 @@ public class SimulatorView extends Application {
     }
 
     /**
-    * Runs the simulation for a specified number of generations. If the simulation becomes non-viable
+    * Simulates a specified number of generations. If the simulation becomes non-viable
     * before reaching the desired number of generations, it stops early.
     *
     * @param numStep: The number of generations to simulate.
