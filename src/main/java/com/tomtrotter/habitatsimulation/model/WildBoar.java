@@ -5,7 +5,7 @@ import java.util.List;
 import javafx.scene.paint.Color;
 
 /**
-* A simple model of a WildBoar. A WildBoar ages, moves, eats plants, and can hunt prey.
+* A simple model of a WildBoar. A wild boar ages, moves, eats plants, and can hunt prey.
 * It can either graze or hunt based on a predefined probability.
 */
 
@@ -19,14 +19,14 @@ public class WildBoar extends Animal implements Predator, Prey {
     * or with a random age and food level based on whether it is from the initial generation.
     *
     * @param isGen1: If true, the wild boar will have random age and hunger level.
-    * @param field: The field currently occupied by the wild boar.
+    * @param field: The field is currently occupied by wild boars.
     * @param location: The location within the field where the wild boar is placed.
     * @param colour: The colour that the wild boar is represented by.
     * @param gene: The genetic code for the wild boar.
     */
     public WildBoar(boolean isGen1, Field field, Location location, Color colour, String gene) {
         super(field, location, colour, gene);
-        // If initializing the simulation, set random ages and food levels for animals.
+        // If initializing the simulation, set random ages and animal food levels.
         if(isGen1) {
             setAge(rand.nextInt(genetics.getMaxAge()));
             setFoodLevel(rand.nextInt(PLANT_FOOD_VALUE));
@@ -58,7 +58,7 @@ public class WildBoar extends Animal implements Predator, Prey {
     * Creates a new baby WildBoar.
     *
     * @param field: The field where the baby wild boar will be created.
-    * @param location: The location within the field where the baby wild boar will be placed.
+    * @param location: The field where the baby wild boar will be placed.
     * @param colour: The colour of the baby wild boar.
     * @param gene: The genetic code for the baby wild boar.
     * @return A new WildBoar object representing the baby wild boar.
@@ -71,7 +71,7 @@ public class WildBoar extends Animal implements Predator, Prey {
     /**
     * Sets the hunting probability for the wild boar, determining whether it will hunt or graze.
     *
-    * @param probability: The probability that the wild boar will hunt. A value between 0 and 1.
+    * @param probability: The probability that the wild boar will hunt—a value between 0 and 1.
     */
     protected void setHuntProbability(double probability) {
         HUNT_PROBABILITY = probability;
