@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 * meaning hares can be hunted by predators in the simulation.
 * <p>
 * Hares can be initialized as either a first-generation hare with random
-* age and hunger levels or as a newborn with default values.
+* age and hunger levels or a newborn with default values.
 */
 
 public class Hare extends Animal implements Prey {
@@ -18,8 +18,8 @@ public class Hare extends Animal implements Prey {
 
     /**
     * Creates a Hare. A hare can be created as a newborn (age zero
-    * and with full food level) or with a random age and hunger level
-    * if it is part of the first generation of the simulation.
+    * and with whole food level) or with a random age and hunger level
+    * If it is part of the first generation of the simulation.
     *
     * @param isGen1: If true, the hare will have a random age, food level, and disease status.
     * @param field: The field where the hare currently exists.
@@ -29,7 +29,7 @@ public class Hare extends Animal implements Prey {
     */
     public Hare(boolean isGen1, Field field, Location location, Color colour, String gene) {
         super(field, location, colour, gene);
-        // If initializing the simulation, set random ages and food levels for animals.
+        // If initializing the simulation, set random ages and animal food levels.
         if(isGen1) {
             setAge(rand.nextInt(genetics.getMaxAge()));
             setFoodLevel(rand.nextInt(PLANT_FOOD_VALUE));
