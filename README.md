@@ -1,31 +1,31 @@
 # Habitat Simulation
 
 ## Overview
-This repository is a JavaFX application initially developed as coursework at King’s College London. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with complex food chain interactions, including multiple species with distinct behaviors, predator-prey relationships & genetic evolution and environmental influences like disease.
+This repository is a **JavaFX application** initially developed as coursework at **King’s College London**. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with **complex food chain interactions**, including multiple species with distinct behaviors, **predator-prey relationships, genetic evolution** and **environmental influences like disease**.
 
 ## Features
-- 🦊 Simulates predator-prey interactions with distinct hunting behaviors.
-- 🌿 Implements plant consumption mechanics for herbivores.
-- 🦠 Includes disease spread among species.
-- 🧬 Genetic inheritance and mutations affecting evolution.
-- ⏳ Age-based predator behavior.
-- 🛠️ Extensible object-oriented design with reusable logic.
+- 🦊 **Simulates predator-prey interactions** with distinct hunting behaviors.
+- 🌿 **Implements plant consumption mechanics** for herbivores.
+- 🦠 **Includes disease spread** among species.
+- 🧬 **Genetic inheritance and mutations** affecting evolution.
+- ⏳ **Age-based predator behavior**.
+- 🛠️ **Extensible object-oriented design** with reusable logic.
 
 ## Installation
 To install this project, follow these steps:
-1. Clone the repository:
+1. **Clone the repository:**
    ```sh
    git clone https://github.com/Climber1705/habitat-simulation.git
    ```
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```sh
    cd habitat-simulation
    ```
-3. Ensure you have Java and JavaFX installed:
-   - Install Java (JDK 17 or later): [Download here](https://jdk.java.net/)
-   - Install JavaFX SDK: [Download here](https://gluonhq.com/products/javafx/)
-4. Configure JavaFX in your IDE (e.g., IntelliJ IDEA or Eclipse).
-5. Build the project using Maven or Gradle:
+3. **Ensure you have Java and JavaFX installed:**
+   - **Install Java (JDK 17 or later):** [Download here](https://jdk.java.net/)
+   - **Install JavaFX SDK:** [Download here](https://gluonhq.com/products/javafx/)
+4. **Configure JavaFX** in your IDE (e.g., IntelliJ IDEA or Eclipse).
+5. **Build the project using Maven or Gradle:**
    ```sh
    mvn clean install
    ```
@@ -43,7 +43,7 @@ or
 ```sh
 java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar target/your-app.jar
 ```
-After running the command, the JavaFX window should launch, displaying the habitat simulation.
+After running the command, the **JavaFX window should launch, displaying the habitat simulation.**
 
 ## Repository Structure
 ``` graphql
@@ -101,15 +101,21 @@ or
 ```sh
 gradle test
 ```
-JUnit tests cover animal behavior logic, hunting mechanisms, plant consumption, breeding mechanics, disease spread, and genetic inheritance.
+JUnit tests cover:
+- ✔️ Animal behavior logic
+- ✔️ Hunting mechanisms
+- ✔️ Plant consumption
+- ✔️ Breeding mechanics
+- ✔️ Disease spread
+- ✔️ Genetic inheritance
 
 ## Improvements
 Future improvements and features include:
-- Add a section to show the number of each infected species.
-- See the average characteristic of each species.
-- Additional species-specific traits (e.g., movement patterns, field of view).
-- Seasonal changes affecting food availability and survival rates.
+- 📊 **Add a section** to show the number of each infected species.
+- 📈 **See the average** characteristic** of each species.
+- 🦌 **Additional species-specific traits** (e.g., movement patterns, field of view).
+- 🌦️ **Seasonal changes affecting food availability and survival rates.**
 
 ## License
-This project operates under the GNU General Public License v3.0. The [LICENSE](https://choosealicense.com/licenses/gpl-3.0/) file provides details.
+This project operates under the **GNU General Public License v3.0**. The **[LICENSE](https://choosealicense.com/licenses/gpl-3.0/)** file provides details.
 
