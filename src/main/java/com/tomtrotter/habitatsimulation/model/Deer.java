@@ -20,11 +20,11 @@ public class Deer extends Animal implements Prey {
     * @param field: The field where the deer is located.
     * @param location: The location within the field where the deer will be placed.
     * @param colour: The colour representation of the deer in the simulation.
-    * @param gene: The genetic material that will be assigned to the deer.
+    * @param gene: The genetic material assigned to the deer.
     */
     public Deer(boolean isGen1, Field field, Location location, Color colour, String gene) {
         super(field, location, colour, gene);
-        // If initializing the simulation, set random ages and food levels for animals.
+        // If initializing the simulation, set random ages and animal food levels.
         if(isGen1) {
             setAge(rand.nextInt(genetics.getMaxAge()));
             setFoodLevel(rand.nextInt(PLANT_FOOD_VALUE));
@@ -39,9 +39,9 @@ public class Deer extends Animal implements Prey {
 
     /**
     * Searches for food for the deer. In this case, it delegates the food search to the `graze()` method,
-    * as deer are herbivores that graze on plants.
+    * Deer are herbivores that graze on plants.
     *
-    * @return The location of the found food, or null if no food is found.
+    * @return The food's location, or null if no food is found.
     */
     @Override
     protected Location findFood() {
@@ -67,7 +67,7 @@ public class Deer extends Animal implements Prey {
     * Retrieves the icon that represents the deer in the simulation.
     * This method returns the emoji 🦌 to symbolize a deer.
     *
-    * @return A string representing the deer’s icon ("🦌").
+    * @return A string representing the deer's icon ("🦌").
     */
     @Override
     public String getIcon() {
