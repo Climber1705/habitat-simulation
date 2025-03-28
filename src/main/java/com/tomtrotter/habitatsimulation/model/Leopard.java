@@ -16,8 +16,8 @@ public class Leopard extends Animal implements Predator {
 
     /**
     * Creates a Leopard. A leopard can be created as a newborn (age zero
-    * and with full food level) or with a random age and hunger level
-    * if it is part of the first generation of the simulation.
+    * and with whole food level) or with a random age and hunger level
+    * If it is part of the first generation of the simulation.
     *
     * @param isGen1: If true, the leopard will have a random age, food level, and disease status.
     * @param field: The field where the leopard currently exists.
@@ -27,7 +27,7 @@ public class Leopard extends Animal implements Predator {
     */
     public Leopard(boolean isGen1, Field field, Location location, Color colour, String gene) {
         super(field, location, colour, gene);
-        // If initializing the simulation, set random ages and food levels for animals.
+        // If initializing the simulation, set random ages and animal food levels.
         if(isGen1) {
             setAge(rand.nextInt(genetics.getMaxAge()));
             setFoodLevel(rand.nextInt(PREY_FOOD_VALUE));
@@ -46,7 +46,7 @@ public class Leopard extends Animal implements Predator {
     * which allows the leopard to hunt prey like Deer, Wild Boar, or Hare
     * in the field based on the leopard's age.
     * <p>
-    * If the leopard is young, it hunts smaller prey (Hare, Deer).
+    * The leopard hunts smaller prey (Hare, Deer) if it is young.
     * Older leopards may hunt larger prey (Deer, Wild Boar, Hare).
     *
     * @return The location where the leopard finds food.
