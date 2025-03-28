@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
 * Unit tests for animal breeding behavior in a habitat simulation.
-* This class tests the fertility conditions of Tigers and Deers,
+* This class tests the fertility conditions of tigers and deer,
 * ensuring that breeding logic functions as expected.
 */
 public class BreedingTests {
@@ -187,7 +187,7 @@ public class BreedingTests {
     }
 
     /**
-    * Tests that male deers cannot reproduce.
+    * Tests that male deer cannot reproduce.
     */
     @Test
     public void fertilityDeerMaleTest() {
@@ -199,7 +199,7 @@ public class BreedingTests {
     }
 
     /**
-    * Tests that female deers can reproduce if a male is nearby.
+    * Tests that female deer can reproduce if a male is nearby.
     */
     @Test
     public void fertilityDeerFemaleTest() {
@@ -211,7 +211,7 @@ public class BreedingTests {
     }
 
     /**
-    * Tests that female deers cannot reproduce if no male is nearby.
+    * Tests that female deer cannot reproduce if no male is nearby.
     */
     @Test
     public void fertilityDeerFemaleAloneTest() {
@@ -223,7 +223,7 @@ public class BreedingTests {
     }
 
     /**
-    * Tests that male deers cannot reproduce alone.
+    * Tests that male deer cannot reproduce alone.
     */
     @Test
     public void fertilityDeerMaleAloneTest() {
