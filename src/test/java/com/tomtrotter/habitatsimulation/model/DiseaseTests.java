@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
 * Unit tests that verify the implementation of disease spread
 * within the simulation. It ensures that diseases transfer correctly between
-* animals of the same species while not affecting other species.
+* animals of the same species while not affecting others.
 */
 public class DiseaseTests {
 
@@ -113,7 +113,7 @@ public class DiseaseTests {
     * <p>
     * - The male tiger starts diseased.
     * - The female tiger is expected to become diseased after acting.
-    * - The deer should remain healthy, as diseases do not cross species.
+    * - Deer should remain healthy, as diseases do not cross species.
     */
     @Test
     public void testDiseaseSpread() {
