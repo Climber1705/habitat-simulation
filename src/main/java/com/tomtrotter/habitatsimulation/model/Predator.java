@@ -23,7 +23,7 @@ public interface Predator {
         List<Location> adjacent = field.adjacentLocations(predator.getLocation());
         
         for(Class<? extends Animal> preyType: preyTypes) {
-            for (Location where : adjacent) {
+            for (Location where: adjacent) {
                 Object obj = field.getObjectAt(where);
                 if (!(obj instanceof Animal prey)) {
                     continue;
