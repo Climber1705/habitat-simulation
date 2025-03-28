@@ -209,7 +209,6 @@ public class PlantTests {
         // Simulate the deer's action, triggering its death due to overcrowding
         List<Animal> newAnimals = new ArrayList<>();
         maleDeer.act(newAnimals);
-        System.out.println("tried to move");
 
         // Verify that the deer is removed and replaced by a plant
         assertNull(field.getAnimalAt(1,1), "There is no longer a deer at (1,1), it died due to overcrowding");
