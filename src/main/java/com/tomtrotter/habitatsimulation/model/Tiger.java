@@ -34,7 +34,7 @@ public class Tiger extends Animal implements Predator {
         else {
             setAge(0);
             setFoodLevel(PREY_FOOD_VALUE);
-            settigerse(false);
+            setDisease(false);
         }
     }
 
