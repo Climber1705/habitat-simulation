@@ -65,7 +65,7 @@ public class Field {
 
     /**
     * Places an animal at the specified location.
-    * If an animal already exists at that location, it will be replaced.
+    * If an animal exists at that location, it will be replaced.
     *
     * @param animal: The animal to be placed.
     * @param location: The location where the animal will be placed.
@@ -100,7 +100,7 @@ public class Field {
     *
     * @param row: The row coordinate.
     * @param col: The column coordinate.
-    * @return The animal at the given location, or null if there is none.
+    * @return The animal is at the given location, or it is null if there is none.
     */
     public Animal getAnimalAt(int row, int col) {
         return field[row][col];
@@ -111,7 +111,7 @@ public class Field {
     *
     * @param row: The row coordinate.
     * @param col: The column coordinate.
-    * @return The plant at the given location, or null if there is none.
+    * @return The plant is at the given location, or it is null if there is none.
     */
     public Plant getPlantAt(int row, int col) {
         return plantField[row][col];
@@ -119,21 +119,21 @@ public class Field {
 
 
     /**
-    * Retrieves the object (either an animal or a plant) at the specified location.
+    * Retrieves the object (animal or plant) at the specified location.
     *
     * @param location: The location to check.
-    * @return The object at the given location, or null if there is none.
+    * @return The object is at the given location or null if there is none.
     */
     public Object getObjectAt(Location location) {
         return getObjectAt(location.getRow(), location.getCol());
     }
 
     /**
-    * Retrieves the object (either an animal or a plant) at the specified row and column.
+    * Retrieves the object (animal or plant) at the specified row and column.
     *
     * @param row: The row coordinate.
     * @param col: The column coordinate.
-    * @return The object at the given location, or null if there is none.
+    * @return The object is at the given location or null if there is none.
     */
     public Object getObjectAt(int row, int col) {
         Animal animal = getAnimalAt(row,col);
@@ -152,7 +152,7 @@ public class Field {
     * @return A shuffled list of adjacent locations.
     */
     public List<Location> adjacentLocations(Location location) {
-        assert location != null : "Null location passed to adjacentLocations";
+        assert location != null: "Null location passed to adjacentLocations";
         
         List<Location> locations = new LinkedList<>();
         int row = location.getRow();
@@ -184,12 +184,12 @@ public class Field {
     * @return A shuffled list of living neighboring animals.
     */
     public List<Animal> getLivingNeighbours(Location location) {
-      assert location != null : "Null location passed to adjacentLocations";
+      assert location != null: "Null location passed to adjacentLocations";
       List<Animal> neighbours = new LinkedList<>();
 
         List<Location> adjLocations = adjacentLocations(location);
 
-        for (Location loc : adjLocations) {
+        for (Location loc: adjLocations) {
           Animal animal = field[loc.getRow()][loc.getCol()];
           // If there's empty space
           if(animal == null) {
