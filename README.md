@@ -105,8 +105,8 @@ JUnit tests cover animal behavior logic, hunting mechanisms, plant consumption, 
 
 ## Improvements
 Future improvements and features include:
-- Dynamic plant growth and spread.
-- Additional species-specific traits (e.g., metabolism, movement patterns).
+- Add a section to show the number of each infected species.
+- Additional species-specific traits (e.g., movement patterns).
 - Seasonal changes affecting food availability and survival rates.
 
 ## License
