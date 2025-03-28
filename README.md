@@ -1,7 +1,7 @@
 # Habitat Simulation
 
 ## Overview
-This project is a JavaFX application designed to simulate a habitat environment with complex food chain interactions. The simulation includes multiple species with distinct behaviors, implementing predator-prey relationships, genetic evolution, and environmental influences such as disease. The project provides a realistic and engaging representation of ecosystem dynamics.
+This repository is a JavaFX application that simulates a habitat environment with complex food chain interactions. The simulation includes multiple species with distinct behaviors, implementing predator-prey relationships, genetic evolution, and environmental influences like disease. The project provides a realistic and engaging representation of ecosystem dynamics.
 
 ## Features
 - Simulates predator-prey interactions with distinct hunting behaviors.
@@ -15,11 +15,11 @@ This project is a JavaFX application designed to simulate a habitat environment 
 To install this project, follow these steps:
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/Climber1705/habitat-simulation.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd your-repo
+   cd habitat-simulation
    ```
 3. Ensure you have Java and JavaFX installed:
    - Install Java (JDK 17 or later): [Download here](https://jdk.java.net/)
