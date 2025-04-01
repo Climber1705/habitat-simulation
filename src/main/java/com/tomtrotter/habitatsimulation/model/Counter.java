@@ -20,6 +20,7 @@ public class Counter {
     *
     * @param name: The name representing the type of participant (e.g., species name).
     * @param icon: A string representation (emoji or symbol) associated with this type.
+    * @param colour: The colour representing this type. 
     */
     public Counter(String name, String icon, Color colour) {
         this.name = name;
@@ -58,7 +59,7 @@ public class Counter {
     /**
      * Retrieves the colour associated with this counter.
      *
-     * @return The colour representing the participant type's.
+     * @return The colour representing the participant type.
      */
     public Color getColour() {
         return colour;
