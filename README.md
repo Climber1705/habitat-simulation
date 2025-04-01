@@ -112,7 +112,7 @@ gradle test
 ## 🔮 **Improvements**
 Future improvements and features include:
 - 📊 **Add a section** to show the number of each infected species.
-- 📈 **See the average** characteristic** of each species.
+- 📈 **See the average characteristic** of each species.
 - 🦌 **Additional species-specific traits** (e.g., movement patterns, field of view).
 - 🌦️ **Seasonal changes affecting food availability and survival rates.**
 
