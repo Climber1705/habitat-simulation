@@ -6,7 +6,7 @@ This repository is a **JavaFX application** initially developed as coursework at
 ## 🌟 **Features**
 - 🦊 **Simulates predator-prey interactions** with distinct hunting behaviors.
 - 🌿 **Implements plant consumption mechanics** for herbivores.
-- 🦠 **Includes disease spread** among species.
+- 🦠 **Includes disease spread** among species and **Immunity**.
 - 🧬 **Genetic inheritance and mutations** affecting evolution.
 - ⏳ **Age-based predator behavior**.
 - 🛠️ **Extensible object-oriented design** with reusable logic.
@@ -59,6 +59,7 @@ habitat-simulation/                   # Root directory of the project
 │   │   │   │       │    ├── Animal.java  # Abstract class for all animals
 │   │   │   │       │    ├── Counter.java  # Tracks population counts
 │   │   │   │       │    ├── Deer.java  # Class representing deer behavior
+│   │   │   │       │    ├── Disease.java # Handles disease infection                       
 │   │   │   │       │    ├── Field.java  # Defines the simulation grid
 │   │   │   │       │    ├── FieldStats.java  # Gathers statistics about the field
 │   │   │   │       │    ├── Genetics.java  # Handles genetic mutations and inheritance
