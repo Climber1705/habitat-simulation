@@ -1,7 +1,7 @@
 # 🦓 **Habitat Simulation**
 
 ## 🔍 **Overview**
-This repository is a **JavaFX application** initially developed as coursework at **King’s College London**. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with **complex food chain interactions**, including multiple species with distinct behaviors, **predator-prey relationships, genetic evolution** and **environmental influences like disease**.
+This repository is a **JavaFX application** initially developed as coursework at **King’s College London**. I’ve been expanding and refining it beyond the original requirements. The simulation models a dynamic habitat environment with **complex food chain interactions**, including multiple species with distinct behaviours, **predator-prey relationships, genetic evolution** and **environmental influences like disease**.
 
 ## 🌟 **Features**
 - 🦊 **Simulates predator-prey interactions** with distinct hunting behaviors.
@@ -48,49 +48,64 @@ After running the command, the **JavaFX window should launch, displaying the hab
 ## 🗂️ **Repository Structure**
 ``` graphql
 habitat-simulation/                   # Root directory of the project
-├── src/                              # Source code directory
-│   ├── main/                         # Main application source files
-│   │   ├── java/                     # Java source code
-│   │   │   ├── com/                  # Main application package
-│   │   │   │   └── tomtrotter/habitatsimulation/
-│   │   │   │       ├── controller/   # Contains application control logic
-│   │   │   │       │    └── Simulator.java  # Manages the simulation loop and logic
-│   │   │   │       ├── model/        # Simulation logic and data models
-│   │   │   │       │    ├── Animal.java  # Abstract class for all animals
-│   │   │   │       │    ├── Counter.java  # Tracks population counts
-│   │   │   │       │    ├── Deer.java  # Class representing deer behavior
-│   │   │   │       │    ├── Disease.java # Handles disease infection                       
-│   │   │   │       │    ├── Field.java  # Defines the simulation grid
-│   │   │   │       │    ├── FieldStats.java  # Gathers statistics about the field
-│   │   │   │       │    ├── Genetics.java  # Handles genetic mutations and inheritance
-│   │   │   │       │    ├── Hare.java  # Class representing hare behavior
-│   │   │   │       │    ├── Leopard.java  # Class representing leopard behavior
-│   │   │   │       │    ├── Location.java  # Represents a position in the simulation grid
-│   │   │   │       │    ├── Plant.java  # Class representing plant behavior
-│   │   │   │       │    ├── Predator.java  # Interface defining predator-specific behavior
-│   │   │   │       │    ├── Prey.java  # Interface defining prey-specific behavior
-│   │   │   │       │    ├── Randomizer.java  # Utility class for generating random values
-│   │   │   │       │    ├── Tiger.java  # Class representing tiger behavior
-│   │   │   │       │    └── WildBoar.java  # Class representing wild boar behavior
-│   │   │   │       ├── view/          # UI components using JavaFX
-│   │   │   │       │    ├── FieldCanvas.java  # Renders the simulation grid
-│   │   │   │       │    └── SimulatorView.java  # Defines the simulation UI layout
-│   │   │   │       └── Main.java      # Entry point of the JavaFX application
-│   │   │   └── module-info.java  # Java module definition
-│   └── test/java/com/tomtrotter/habitatsimulation/  # Unit tests for the project
-│         ├── controller/  # Tests for application logic
-│         │    └── SimulatorTests.java  # Tests for simulation logic
-│         ├── model/  # Tests for model behavior
-│         │    ├── BreedingTests.java  # Tests genetic inheritance and reproduction
-│         │    ├── DiseaseTests.java  # Tests disease spread mechanics
-│         │    ├── FoodTests.java  # Tests food consumption and availability
-│         │    ├── GeneticTests.java  # Tests genetic mutation behaviors
-│         │    └── PlantTests.java  # Tests plant growth and behavior
-│         └── view/  # Tests for UI components
-│              └── FieldCanvasTests.java  # Tests the rendering of the simulation grid
-├── pom.xml                           # Maven configuration file managing project dependencies and build settings
-├── README.md                         # Project documentation providing an overview, features, installation instructions, usage guidelines, and other relevant information
-└── LICENSE                           # License information specifying the terms under which the project's code can be used and distributed
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/tomtrotter/habitatsimulation/
+│   │           ├── controller/              # Contains application control logic
+│   │           │   └── Simulator.java       # Manages the simulation loop and logic
+│   │           ├── model/                   # Contains all simulation models and logic
+│   │           │   ├── core/                # Core classes shared by all organisms
+│   │           │   │   ├── Animal.java          # Abstract class representing general animal behaviour
+│   │           │   │   ├── Disease.java         # Class handling disease infection and transmission
+│   │           │   │   ├── Organism.java        # Base class for all organisms in the simulation
+│   │           │   │   ├── Plant.java           # Class representing plant behaviour and growth
+│   │           │   │   ├── Predator.java        # Interface for predator behaviour
+│   │           │   │   └── Prey.java            # Interface for prey 
+│   │           │   ├── entities/            # Specific animal species/entities in the simulation
+│   │           │   │   ├── Deer.java            # Implements Deer behaviour as a Prey
+│   │           │   │   ├── Hare.java            # Implements Hare behaviour as a Prey
+│   │           │   │   ├── Leopard.java         # Implements Leopard behaviour as a Predator
+│   │           │   │   ├── Tiger.java           # Implements Tiger behaviour as a Predator
+│   │           │   │   └── WildBoar.java        # Implements Wild Boar behaviour (could be predator or prey)
+│   │           │   ├── environment/         # Environmental components of the simulation
+│   │           │   │   ├── Field.java           # Represents the 2D simulation grid
+│   │           │   │   ├── FieldStats.java      # Gathers and calculates statistics about the field
+│   │           │   │   └── Location.java        # Represents a coordinate within the simulation grid
+│   │           │   ├── factory/             # Factory classes for object instantiation
+│   │           │   │   └── OrganismFactory.java # Central class for creating organisms
+│   │           │   ├── genetics/            # Handles genetic logic
+│   │           │   │   └── Genetics.java        # Manages inheritance, mutation, and gene mixing
+│   │           │   ├── state/               # Maintains simulation and view state
+│   │           │   │   ├── SimulatorState.java  # Holds simulation status and statistics
+│   │           │   │   └── ViewState.java       # Holds UI state (selected organism, etc.)behaviour
+│   │           │   └── util/                # Utility/helper classes
+│   │           │       ├── Counter.java         # Tracks population counts by organism type
+│   │           │       └── Randomizer.java      # Provides seeded random number generation
+│   │           ├── view/                    # JavaFX-based UI classes
+│   │           │   ├── BaseView.java            # Base class for shared view functionality
+│   │           │   ├── FieldCanvas.java         # Canvas for rendering the simulation grid
+│   │           │   ├── SettingsView.java        # UI component for adjusting simulation settings
+│   │           │   └── SimulatorView.java       # Main UI layout for running simulations
+│   │           └── Main.java                # JavaFX application entry point
+│   └── test/
+│       └── java/
+│           └── com/tomtrotter/habitatsimulation/
+│               ├── controller/              # Tests for controller logic
+│               │   └── SimulatorTests.java      # Unit tests for simulation loop and event handling
+│               ├── model/                   # Model-specific test cases
+│               │   ├── BreedingTests.java       # Tests inheritance and breeding behaviour
+│               │   ├── DiseaseTests.java        # Tests infection spread, recovery, and death
+│               │   ├── FoodTests.java           # Tests the organism's feeding behaviour and food availability
+│               │   ├── GeneticTests.java        # Tests for mutation rates and gene mixing
+│               │   └── PlantTests.java          # Tests plant growth, reproduction, and lifecycle
+│               └── view/                    # UI tests
+│                   └── FieldCanvasTests.java    # Tests rendering logic of the field grid
+├── module-info.java                         # Java module declaration file (module dependencies)
+├── pom.xml                                  # Maven build configuration (dependencies, build, plugins)
+├── README.md                                # Project documentation (overview, setup, usage)
+└── LICENSE                                  # Licensing information for the project
+
 ```
 
 ## 🧪 **Testing**
@@ -103,7 +118,7 @@ or
 gradle test
 ```
 **JUnit tests cover:**
-- ✔️ Animal behavior logic
+- ✔️ Animal behaviour logic
 - ✔️ Hunting mechanisms
 - ✔️ Plant consumption
 - ✔️ Breeding mechanics
