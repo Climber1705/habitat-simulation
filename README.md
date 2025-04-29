@@ -7,7 +7,7 @@ This repository is a **JavaFX application** initially developed as coursework at
 ## 🌟 **Features**
 - 🦊 **Simulates predator-prey interactions** with distinct hunting behaviors.
 - 🌿 **Implements plant consumption mechanics** for herbivores.
-- 🦠 **Includes disease spread** among species and **Immunity**.
+- 🦠 **Includes disease spread** among species.
 - 🧬 **Genetic inheritance and mutations** affecting evolution.
 - ⏳ **Age-based predator behavior**.
 - 🛠️ **Extensible object-oriented design** with reusable logic.
