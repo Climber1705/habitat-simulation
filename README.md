@@ -48,7 +48,7 @@ After running the command, the **JavaFX window should launch, displaying the hab
 
 ## 🗂️ **Repository Structure**
 ``` graphql
-habitat-simulation/                   # Root directory of the project
+habitat-simulation/                  
 ├── src/
 │   ├── main/
 │   │   └── java/
