@@ -52,61 +52,89 @@ habitat-simulation/                   # Root directory of the project
 ├── src/
 │   ├── main/
 │   │   └── java/
-│   │       └── com/tomtrotter/habitatsimulation/
-│   │           ├── controller/              # Contains application control logic
-│   │           │   └── Simulator.java       # Manages the simulation loop and logic
-│   │           ├── model/                   # Contains all simulation models and logic
-│   │           │   ├── core/                # Core classes shared by all organisms
-│   │           │   │   ├── Animal.java          # Abstract class representing general animal behaviour
-│   │           │   │   ├── Disease.java         # Class handling disease infection and transmission
-│   │           │   │   ├── Organism.java        # Base class for all organisms in the simulation
-│   │           │   │   ├── Plant.java           # Class representing plant behaviour and growth
-│   │           │   │   ├── Predator.java        # Interface for predator behaviour
-│   │           │   │   └── Prey.java            # Interface for prey 
-│   │           │   ├── entities/            # Specific animal species/entities in the simulation
-│   │           │   │   ├── Deer.java            # Implements Deer behaviour as a Prey
-│   │           │   │   ├── Hare.java            # Implements Hare behaviour as a Prey
-│   │           │   │   ├── Leopard.java         # Implements Leopard behaviour as a Predator
-│   │           │   │   ├── Tiger.java           # Implements Tiger behaviour as a Predator
-│   │           │   │   └── WildBoar.java        # Implements Wild Boar behaviour (could be predator or prey)
-│   │           │   ├── environment/         # Environmental components of the simulation
-│   │           │   │   ├── Field.java           # Represents the 2D simulation grid
-│   │           │   │   ├── FieldStats.java      # Gathers and calculates statistics about the field
-│   │           │   │   └── Location.java        # Represents a coordinate within the simulation grid
-│   │           │   ├── factory/             # Factory classes for object instantiation
-│   │           │   │   └── OrganismFactory.java # Central class for creating organisms
-│   │           │   ├── genetics/            # Handles genetic logic
-│   │           │   │   └── Genetics.java        # Manages inheritance, mutation, and gene mixing
-│   │           │   ├── state/               # Maintains simulation and view state
-│   │           │   │   ├── SimulatorState.java  # Holds simulation status and statistics
-│   │           │   │   └── ViewState.java       # Holds UI state (selected organism, etc.)behaviour
-│   │           │   └── util/                # Utility/helper classes
-│   │           │       ├── Counter.java         # Tracks population counts by organism type
-│   │           │       └── Randomizer.java      # Provides seeded random number generation
-│   │           ├── view/                    # JavaFX-based UI classes
-│   │           │   ├── BaseView.java            # Base class for shared view functionality
-│   │           │   ├── FieldCanvas.java         # Canvas for rendering the simulation grid
-│   │           │   ├── SettingsView.java        # UI component for adjusting simulation settings
-│   │           │   └── SimulatorView.java       # Main UI layout for running simulations
-│   │           └── Main.java                # JavaFX application entry point
+│   │       ├── com/tomtrotter/habitatsimulation/
+│   │       |   ├── application/             
+│   │       |   │   └── Main.java               
+│   │       |   ├── core/                  
+│   │       |   │   ├── domain/             
+│   │       |   │   │   ├── Animal.java          
+│   │       |   │   │   ├── Disease.java     
+│   │       |   │   │   ├── Organism.java        
+│   │       |   │   │   ├── Plant.java           
+│   │       |   │   │   ├── Predator.java        
+│   │       |   │   │   └── Prey.java            
+|   |       |   ├── simulation/
+│   │       |   │   ├── entities/           
+│   │       |   │   │   ├── Deer.java        
+│   │       |   │   │   ├── Hare.java            
+│   │       |   │   │   ├── Leopard.java       
+│   │       |   │   │   ├── Tiger.java           
+│   │       |   │   │   └── WildBoar.java        
+│   │       |   │   ├── environment/         
+|   |       |   |   |   ├── Counter.java         
+│   │       |   │   │   ├── Field.java           
+│   │       |   │   │   ├── FieldStats.java     
+│   │       |   │   │   └── Location.java        
+│   │       |   │   ├── factory/            
+│   │       |   │   │   └── OrganismFactory.java 
+│   │       |   │   ├── genetics/          
+|   |       |   |   |   ├── attributes/        
+|   |       |   |   |   |   ├── AttributeDefinition.java         
+│   │       |   │   │   |   ├── Attributes.java               
+│   │       |   │   │   |   └── GeneticAttributeManager.java  
+|   |       |   |   |   ├── builder/
+|   |       |   |   |   |   └── GeneticsBuilder.java         
+|   |       |   |   |   ├── core/
+|   |       |   |   |   |   └── Genetics.java        
+|   |       |   |   |   └── mutation/
+|   |       |   |   |       ├── BooleanRandomizeMutation.java
+|   |       |   |   |       ├── BooleanToggleMutation.java
+|   |       |   |   |       ├── DoubleIncrementMutation.java
+|   |       |   |   |       ├── IntegerIncrementMutation.java
+|   |       |   |   |       ├── MutationFactory.java
+|   |       |   |   |       ├── MutationStrategy.java
+|   |       |   |   |       └── MutationType.java 
+|   |       |   |   ├── simulation/
+|   |       |   |   |   └── Simulator.java
+|   |       |   |   └── state/
+|   |       |   |       └── SimulatorState.java
+|   |       |   ├── ui/
+│   │       |   │   ├── base/
+|   |       |   |   |   └── BaseView.java
+│   │       |   │   ├── canvas/
+|   |       |   |   |   └── FieldCanvas.java
+│   │       |   │   ├── components/
+|   |       |   |   |   ├── SectionBuilder.java
+|   |       |   |   |   └── UIFactory.java
+│   │       |   │   ├── screens/
+|   |       |   |   |   ├── SettingsView.java
+|   |       |   |   |   └── SimulatorView.java
+|   |       |   |   └── state/
+│   │       |   │       └── ViewState.java  
+│   │       |   └── util/             
+│   │       |       └── Randomizer.java      
+|   |       └── module-info.java
 │   └── test/
 │       └── java/
 │           └── com/tomtrotter/habitatsimulation/
-│               ├── controller/              # Tests for controller logic
-│               │   └── SimulatorTests.java      # Unit tests for simulation loop and event handling
-│               ├── model/                   # Model-specific test cases
-│               │   ├── BreedingTests.java       # Tests inheritance and breeding behaviour
-│               │   ├── DiseaseTests.java        # Tests infection spread, recovery, and death
-│               │   ├── FoodTests.java           # Tests the organism's feeding behaviour and food availability
-│               │   ├── GeneticTests.java        # Tests for mutation rates and gene mixing
-│               │   └── PlantTests.java          # Tests plant growth, reproduction, and lifecycle
-│               └── view/                    # UI tests
-│                   └── FieldCanvasTests.java    # Tests rendering logic of the field grid
-├── module-info.java                         # Java module declaration file (module dependencies)
-├── pom.xml                                  # Maven build configuration (dependencies, build, plugins)
-├── README.md                                # Project documentation (overview, setup, usage)
-└── LICENSE                                  # Licensing information for the project
-
+│               ├── core/domain/              
+│               │   ├── AnimalTest.java
+│               │   ├── ConcreteAnimalTest.java
+│               │   ├── DiseaseTest.java
+│               │   ├── OrganismTest.java
+│               │   ├── PlantTest.java
+│               │   ├── PredatorTest.java
+│               │   └── PreyTest.java           
+│               ├── simulation/
+│               │   ├── genetics/
+│               |   |   └── GeneticsTest.java  
+│               │   └── simulation/
+│               |       └── SimulatorTests.java    
+│               └── ui/
+│                   └── FieldCanvasTests.java 
+├── LICENSE
+├── pom.xml
+└── README.md 
 ```
 
 ## 🧪 **Testing**
